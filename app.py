@@ -24,6 +24,7 @@ feed = feedparser.parse(url)
 lastest_url = feed['items'][0]['link']
 # lastest_date = feed['items'][0]['date'] # add conversion for later usage
 
+response = requests.get(lastest_url).text
 # double failsafe for entries that are no galleries
 if 'is-immersive' not in response:
 	lastest_url = feed['items'][1]['link']
@@ -36,8 +37,6 @@ if 'is-immersive' not in response:
 ##############################
 # 2 / FROM HTML: GET DATA
 ##############################
-
-response = requests.get(lastest_url).text
 soup = BeautifulSoup(response, 'html.parser')
 
 # DEFINE LISTS
