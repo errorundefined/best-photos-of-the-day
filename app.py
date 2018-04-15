@@ -31,8 +31,8 @@ if 'is-immersive' not in response:
 	response = requests.get(lastest_url).text
 
 	if 'is-immersive' not in response:
-	lastest_url = feed['items'][2]['link']
-	response = requests.get(lastest_url).text
+		lastest_url = feed['items'][2]['link']
+		response = requests.get(lastest_url).text
 
 ##############################
 # 2 / FROM HTML: GET DATA
