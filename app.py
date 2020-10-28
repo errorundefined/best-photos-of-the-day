@@ -21,17 +21,17 @@ from collections import defaultdict
 url = 'https://www.theguardian.com/media/news-photography/rss'
 feed = feedparser.parse(url)
 
-lastest_url = feed['items'][0]['link']
-# lastest_date = feed['items'][0]['date'] # add conversion for later usage
+lastest_url = feed.entries[0]['link']
+# lastest_date = feed.entries[0]['date'] # add conversion for later usage
 
 response = requests.get(lastest_url).text
 # double failsafe for entries that are no galleries
 if 'is-immersive' not in response:
-	lastest_url = feed['items'][1]['link']
+	lastest_url = feed.entries[1]['link']
 	response = requests.get(lastest_url).text
 
 	if 'is-immersive' not in response:
-		lastest_url = feed['items'][2]['link']
+		lastest_url = feed.entries[2]['link']
 		response = requests.get(lastest_url).text
 
 ##############################
