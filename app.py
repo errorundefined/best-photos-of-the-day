@@ -55,16 +55,16 @@ for photoset in soup.find_all('source', media='(min-width: 1300px) and (-webkit-
 	photo_url = photo_url.replace(' 3800w','')
 	photo_urls.append(photo_url)
 
-# GET THE photo_captions OUT OF THE SOUP
-for photo_caption in soup.find_all('div', class_='gallery__caption'):
-	photo_caption = photo_caption.text
-	# photo_caption = photo_caption.split('\n',2)[2]
-	photo_caption = photo_caption.replace('\r',' ').replace('\n',' ').replace(' ',' ').replace('   ','').replace('  ','')
-	photo_captions.append(photo_caption)
-
 # GET THE photo_titles OUT OF THE SOUP
 for photo_title in soup.find_all('h2', class_='gallery__caption__title'):
 	photo_titles.append(str(photo_title.text))
+
+# GET THE photo_captions OUT OF THE SOUP
+for photo_caption in soup.find_all('div', class_='gallery__caption'):
+	photo_caption = photo_caption.text
+	photo_caption = photo_caption.split('\n',2)
+	photo_caption = photo_caption.replace('\r',' ').replace('\n',' ').replace(' ',' ').replace('   ','').replace('  ','')
+	photo_captions.append(photo_caption)
 
 # GET THE photo_credits OUT OF THE SOUP
 for photo_credit in soup.find_all('p', class_='gallery__credit'):
