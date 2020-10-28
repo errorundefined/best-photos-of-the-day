@@ -62,7 +62,7 @@ for photo_title in soup.find_all('h2', class_='gallery__caption__title'):
 # GET THE photo_captions OUT OF THE SOUP
 for photo_caption in soup.find_all('div', class_='gallery__caption'):
 	photo_caption = photo_caption.text
-	photo_caption = photo_caption.split('\n',2)
+	photo_caption = photo_caption.split('\n',2)[1]
 	photo_caption = photo_caption.replace('\r',' ').replace('\n',' ').replace(' ',' ').replace('   ','').replace('  ','')
 	photo_captions.append(photo_caption)
 
