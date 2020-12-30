@@ -77,20 +77,22 @@ for photo_credit in soup.find_all('p', class_='gallery__credit'):
 ##############################
 for index,photo_url in enumerate(photo_urls):
 	
-	i = index - 1
+	if index > 0:
+	
+		i = index - 1
 
-	item = {
-		'url': photo_url,
-		'title': photo_titles[i],
-		'caption': photo_captions[i],
-		'copyright': photo_credits[i]
-		}
-
-	photos['items'].update(
-			{
-				index : item
+		item = {
+			'url': photo_url,
+			'title': photo_titles[i],
+			'caption': photo_captions[i],
+			'copyright': photo_credits[i]
 			}
-		)
+
+		photos['items'].update(
+				{
+					index : item
+				}
+			)
 
 ##############################
 # 4 / CONVERT TO JSON
