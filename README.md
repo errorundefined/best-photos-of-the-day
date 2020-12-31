@@ -6,10 +6,6 @@
 
 And may change heavily.
 
-## Support The Guardian
-
-[Support their world class journalism!](https://support.theguardian.com)
-
 ## Authors
 
 [error:undefined design](http://error-undefined.de/)
@@ -19,3 +15,7 @@ And may change heavily.
 [MIT](https://opensource.org/licenses/MIT)
 
 It is discouraged to use this script in any project that promotes racism, sexism, homophobia, animal abuse, violence or any other form of hate speech.
+
+## Support The Guardian
+
+[Support their world class journalism!](https://support.theguardian.com)
